@@ -64,10 +64,6 @@ intents = discord.Intents.default()
 intents.members = True
 intents.reactions = True
 
-
-def run():
+if __name__ == '__main__':
     client = Discord(intents=intents)
     client.run(TOKEN)
-
-if __name__ == '__main__':
-    run()
