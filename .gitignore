@@ -3,3 +3,5 @@ poetry.lock
 __pycache__
 venv
 .env
+test.py
+.vscode
