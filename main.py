@@ -29,10 +29,7 @@ class Discord(discord.Client):
             if guild.name == GUILD:
                 myGuild = guild
 
-        print(
-            f'{self.user} is connected to the following guild:\n'
-            f'{myGuild.name}(id: {myGuild.id})'
-        )
+        print(f'{self.user} is connected to {myGuild.name}:\n')
 
     async def on_member_join(self, member:discord.Member):
         welcome = get(member.guild.text_channels, name="welcome")
