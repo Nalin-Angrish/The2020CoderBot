@@ -2,6 +2,8 @@
 
 import discord
 from discord.utils import get
+from dotenv import load_dotenv
+load_dotenv()
 import os
 
 TOKEN = os.environ.get("BOT_TOKEN")
