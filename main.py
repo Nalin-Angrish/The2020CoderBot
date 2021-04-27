@@ -7,6 +7,7 @@ from dotenv import load_dotenv
 load_dotenv()
 import os
 from ext.commands import Commands
+from ext import instagram
 
 TOKEN = os.environ.get("BOT_TOKEN")
 GUILD = "the2020coder"
@@ -76,4 +77,5 @@ async def on_raw_reaction_remove(payload:discord.RawReactionActionEvent):
 
 if __name__ == "__main__":
     client.add_cog(Commands(client))
+    instagram.setup(client)
     client.run(TOKEN)

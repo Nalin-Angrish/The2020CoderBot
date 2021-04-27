@@ -3,5 +3,6 @@ poetry.lock
 __pycache__
 venv
 .env
-test.py
+test*
 .vscode
+count.txt
