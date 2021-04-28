@@ -12,7 +12,6 @@ This bot was made for users in The2020Coder's Discord server for the members to 
 ## File meanings
 - `main.py`: The main file that contains the initial configuration of the bot and some basic commands and functions.
 - `.replit`: The configuration file for running the project on Replit.
-- `repl.deploy`: A tool for deploying the bot on Replit on every GitHub commit.
 - `requirements.txt`: The list of python requirements for our bot.
 - `ext`: The folder which contains specialized functions for certain processes.
 	- `commands.py`: The conversational commands for helping in the server.
