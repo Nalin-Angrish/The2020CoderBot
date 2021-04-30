@@ -27,7 +27,7 @@ intents = discord.Intents.default()
 intents.members = True
 intents.reactions = True
 
-client = commands.Bot(command_prefix=commands.when_mentioned_or('code '), intents=intents)
+client = commands.Bot(command_prefix=commands.when_mentioned_or('code '), intents=intents, case_insensitive=True)
 
 
 @client.event
