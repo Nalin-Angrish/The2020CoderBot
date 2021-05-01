@@ -22,12 +22,30 @@ rolemap = {
     "terminal": "Terminal Helper"
 }
 
+def allcases(string):
+    n = len(string)
+    mx = 1 << n
+    inp = string.lower()
+    allcombs = []
+      
+    for i in range(mx):
+        combination = [k for k in inp]
+        for j in range(n):
+            if (((i >> j) & 1) == 1):
+                combination[j] = inp[j].upper()
+   
+        temp = ""
+        for i in combination:
+            temp += i
+        allcombs.append(temp)
+    return allcombs
+
 
 intents = discord.Intents.default()
 intents.members = True
 intents.reactions = True
 
-client = commands.Bot(command_prefix=commands.when_mentioned_or('code '), intents=intents, case_insensitive=True)
+client = commands.Bot(command_prefix=allcases("code "), intents=intents)
 
 
 @client.event
