@@ -37,6 +37,7 @@ def init():
     loop.create_task(bot.start(TOKEN))
     Thread(target=loop.run_forever).start()
 
+
+init()
 if __name__ == "__main__":
-    init()
     app.run(port=20202, host="0.0.0.0", debug=False)
