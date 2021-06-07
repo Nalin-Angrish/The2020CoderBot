@@ -4,16 +4,16 @@ The official Descord bot for [the2020coder](https://www.instagram.com/the2020cod
 Instagram URL: https://www.instagram.com/the2020coder  
 Discord Server URL: https://discord.gg/DekWAGD3EF  
 
-This bot, made by [Nalin Angrish](https://www.nalinangrish.me) is Hosted on [Replit](https://replit.com/@Nalin2005/The2020CoderBot?v=1) and is open-sourced on [GitHub](https://github.com/Nalin-2005/The2020CoderBot).  
+This bot, made by [Nalin Angrish](https://www.nalinangrish.me) is open-sourced on [GitHub](https://github.com/Nalin-2005/The2020CoderBot).  
 
 ## About
 This bot was made for users in The2020Coder's Discord server for the members to have fun and to share newest highlights about the official Instagram account.   
 
 ## File meanings
 - `main.py`: The main file that contains the initial configuration of the bot and some basic commands and functions.
-- `.replit`: The configuration file for running the project on Replit.
 - `requirements.txt`: The list of python requirements for our bot.
 - `ext`: The folder which contains specialized functions for certain processes.
+	- `bot.py` The main bot configuration.
 	- `commands.py`: The conversational commands for helping in the server.
 	- `instagram.py`: The functions for Instagram-related operations.
 
