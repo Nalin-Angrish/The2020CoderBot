@@ -6,14 +6,14 @@
         "responses": ["Howdy Partner!", "Hello", "Greetings!", "Hi!", "Hey!", "Good to see you!"]
     },
     {
-        "tag": "age",
-        "patterns": ["how old are you?", "when is your birthday?", "when were you born?", "what is you age?", "how much is your age?"],
-        "responses": ["I was born in 2021", "My birthday is April 5th and I was born in 2021", "I was born on 5/4/2021", "5/4/2021"]
+        "tag": "how-are-you",
+        "patterns": ["how are you?", "How do you do", "Are you fine", "howdy"],
+        "responses": ["I'm fine.", "As good as i could be!", "Wonderful!", "Perfect like Lionel Messi!"]
     },
     {
         "tag": "name",
         "patterns": ["what's your name?", "what are you called?", "who are you?"],
-        "responses": ["My name is The2020CoderBot", "I'm The2020CoderBot", "Myself, The2020CoderBot", "The2020CoderBot"]
+        "responses": ["My name is The2020CoderBot.", "I'm The2020CoderBot.", "Myself, The2020CoderBot.", "The2020CoderBot", "They call me The2020CoderBot."]
     },
     {
         "tag": "goodbye",

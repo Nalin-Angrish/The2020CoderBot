@@ -38,9 +38,7 @@ def clean_up_sentence(sentence):
 
 # return bag of words array: 0 or 1 for each word in the bag that exists in the sentence
 def bow(sentence, words):
-    # tokenize the pattern
 	sentence_words = clean_up_sentence(sentence)
-    # bag of words - matrix of N words, vocabulary matrix
 	bag = [0]*len(words)  
 	for s in sentence_words:
 		for i,w in enumerate(words):
@@ -57,6 +55,7 @@ def classify(message):
     # predict from data and filter out predictions below a threshold
     results = model.predict([input_data])[0]
     results = [[i,r] for i,r in enumerate(results) if r>ERROR_THRESHOLD]
+    
     # sort by strength of probability
     results.sort(key=lambda x: x[1], reverse=True)
     return_list = []

@@ -15,3 +15,11 @@ def allcases(string):
             temp += i
         allcombs.append(temp)
     return allcombs
+
+def isCommand(message:str):
+    starts = allcases("code ")
+    status = False
+    for start in starts:
+        if(message.startswith(start)):
+            status = True
+    return status
