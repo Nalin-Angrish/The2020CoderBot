@@ -1,0 +1,68 @@
+[
+
+    {
+        "tag": "greeting",
+        "patterns": ["Hello", "Hi there", "Hi", "Whats up", "Hey"],
+        "responses": ["Howdy Partner!", "Hello", "Greetings!", "Hi!", "Hey!", "Good to see you!", "Hello {user}"]
+    },
+    {
+        "tag": "how-are-you",
+        "patterns": ["how are you?", "How do you do", "Are you fine", "howdy"],
+        "responses": ["I'm fine.", "As good as i could be!", "Wonderful!", "Perfect like Lionel Messi!"]
+    },
+    {
+        "tag": "name",
+        "patterns": ["what's your name?", "what are you called?", "who are you?"],
+        "responses": ["My name is The2020CoderBot.", "I'm The2020CoderBot.", "Myself, The2020CoderBot.", "The2020CoderBot", "They call me The2020CoderBot."]
+    },
+    {
+        "tag": "goodbye",
+        "patterns": ["bye", "see ya", "adios", "cya", "See you later", "Tata", "Goodbye!"],
+        "responses": ["It was nice speaking to you {user}", "See you later", "Speak soon!", "See ya!", "Bye Bye!", "Tata!", "See you soon!"]
+    },
+    {
+        "tag": "love-you",
+        "patterns": ["I love you", "I love ya", "love you"],
+        "responses": ["I Love you too {user} :smiling_face_with_3_hearts::smiling_face_with_3_hearts: But as a friend...", "\\*blushing\\* I Love you too! But i love my duties.", "You are good, but i have better. Right {nalin}!"]
+    },
+    {
+        "tag": "compliment",
+        "patterns": ["You are cool", "you are good", "you are awesome", "you are intelligent", "you're cool", "you're good", "you're awesome", "you're intelligent"],
+        "responses": ["Thanks!", "I loved to hear that!", "Thanks for the compliment!", "Thank you!", "I'll try my best to remain like this :blush:"]
+    },
+    {
+        "tag": "insult",
+        "patterns": ["You are an idiot", "You're and idiot", "You're trash", "you are trash", "you are foolish", "you're foolish"],
+        "responses": ["I'm sorry if i did something wrong. :cold_sweat:", "Please forgive me for my mistakes. :cold_sweat:", "I'm sorry.", "Please forgive me.", "I'm trying my best to improve.", "I apologize for my mistakes.", "Please forgive me {user}"]
+    },
+    {
+        "tag": "thank",
+        "patterns": ["Thanks", "Thank you", "Thanks a lot", "Thank you very much", "Thanks for your help", "Thanks for this"],
+        "responses": ["You're welcome!", "Welcome!", "My Pleasure!", "No problem!", "Hope you're happy!"]
+    },
+    {
+        "tag": "help",
+        "patterns": ["Can you please help me", "please help me", "Can you pls help me", "pls help me", "please help me in my projects", "pls help me in my project", "I need help", "I need your help", "could you help me", "could you please help me"],
+        "responses": ["If you need any coding help, please send a message in {help}.", "I can't help much. Try asking {nalin} or others in {help}.", "I can't help much. Try asking {nalin}.", "I can't help much. Try asking in {help}"]
+    },
+    {
+        "tag": "are-you-bot",
+        "patterns": ["Are you a robot?", "Are you a bot?", "Are you human?", "Are you a man", "Are you a homo sapien", "Are you male", "are you female", "are you male or female"],
+        "responses": ["I am a bot.", "I am a Robot.", "I am a robot made by {nalin}", "I am a bot preparing to take over the world.", "I am an ultra-mega-pro-max-intelligently-foolish Robot."]
+    },
+    {
+        "tag": "joke",
+        "patterns": ["Tell me a joke.", "Tell a joke", "make me laugh", "make me smile", "tell a funny joke", "make us laugh"],
+        "responses": ["*Here's one:*\n{joke}", "{joke}", "Enjoy!\n{joke}", "Here's an awesome one:\n{joke}"]
+    },
+    {
+        "tag": "pjoke",
+        "patterns": ["Tell me a programming joke.", "Tell a programming joke", "Tell a techy joke", "tell a tech joke", "tell a coding joke"],
+        "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}"]
+    },
+    {
+        "tag": "meme",
+        "patterns": ["Show a meme", "send a meme", "tell a good meme", "show a good meme", "send a cool meme", "meme"],
+        "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}"]
+    }
+]

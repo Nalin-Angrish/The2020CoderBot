@@ -5,10 +5,12 @@ from discord.ext import commands
 from discord.utils import get
 import os
 from ._utils import *
+from .chat import predict
 
 TOKEN = os.environ.get("BOT_TOKEN")
 GUILD = "the2020coder"
 GETROLESMESSAGE = 801056866289451008
+BOTCHATCHANNEL = 852110126940815371
 rolemap = {
     "python": "Python Helper",
     "java": "Java Helper",
@@ -24,6 +26,7 @@ rolemap = {
 intents = discord.Intents.default()
 intents.members = True
 intents.reactions = True
+intents.messages = True
 
 client = commands.Bot(command_prefix=allcases("code "), intents=intents)
 
@@ -71,3 +74,16 @@ async def on_raw_reaction_remove(payload:discord.RawReactionActionEvent):
         role = get(member.guild.roles, name=userrole)
         await member.remove_roles(role)
         await member.send(f"Hello {member.mention}! You have been removed from the `{userrole}` Role in the server.")
+
+
+@client.event
+async def on_message(message:discord.Message):
+    await client.process_commands(message)
+    if (message.author != client.user) and ((message.channel.id == BOTCHATCHANNEL) or isinstance(message.channel, discord.channel.DMChannel)) and (not isCommand(message.content)):
+        response = predict(message.content)
+        if response:
+            response, embed = format_info(response, message, client)
+            if(embed):
+                await message.reply(embed=response)
+            else:
+                await message.reply(response)

@@ -1,3 +1,9 @@
 discord 
 python-dotenv
 flask
+nltk
+keras
+tensorflow
+numpy
+pandas
+requests
