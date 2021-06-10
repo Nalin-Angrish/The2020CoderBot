@@ -1,6 +1,10 @@
 #!/usr/bin/python
 from dotenv import load_dotenv
 load_dotenv()
+import os
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
+
+
 from flask import Flask, request
 import json
 
