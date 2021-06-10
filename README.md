@@ -11,9 +11,12 @@ This bot was made for users in The2020Coder's Discord server for the members to 
 
 ## File meanings
 - `main.py`: The main file that contains the initial configuration of the bot and some basic commands and functions.
+- `train_model.py`: The file to train the Tensorflow model for an AI Chatbot.
+- `passenger_wsgi.py`: The file to integrate the app with Apache using Passenger Phusion.
 - `requirements.txt`: The list of python requirements for our bot.
 - `ext`: The folder which contains specialized functions for certain processes.
 	- `bot.py` The main bot configuration.
+	- `chat.py` The main chatbot AI.
 	- `commands.py`: The conversational commands for helping in the server.
 	- `instagram.py`: The functions for Instagram-related operations.
 
