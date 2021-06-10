@@ -82,4 +82,8 @@ async def on_message(message:discord.Message):
     if (message.author != client.user) and ((message.channel.id == BOTCHATCHANNEL) or isinstance(message.channel, discord.channel.DMChannel)) and (not isCommand(message.content)):
         response = predict(message.content)
         if response:
-            await message.reply(response)
+            response, embed = format_info(response, message, client)
+            if(embed):
+                await message.reply(embed=response)
+            else:
+                await message.reply(response)

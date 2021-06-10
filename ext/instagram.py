@@ -7,7 +7,6 @@ async def on_post_pic(bot:commands.Bot, post:dict):
 		title=post["caption"].split("*-*-*")[0]
 		)
 	message.set_image(url=post["image"])
-	message.set_thumbnail(url=post["image"])
 	message.add_field(name="Like it now on Instagram!", value=post["url"])
 	await channel.send(embed=message)
 	print("Uploaded!")
