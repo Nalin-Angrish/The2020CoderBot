@@ -81,4 +81,5 @@ async def on_message(message:discord.Message):
     await client.process_commands(message)
     if (message.author != client.user) and (message.channel.id == BOTCHATCHANNEL) and (not isCommand(message.content)):
         response = predict(message.content)
-        await message.reply(response)
+        if response:
+            await message.reply(response)

@@ -67,10 +67,12 @@ def classify(message):
 
 
 def predict(message):
-	intent_data = classify(message)
-	intent = intent_data[0]["intent"]
-	for _intent in intents:
-		if _intent["tag"]==intent:
-			intent = _intent
-			break
-	return random.choice(intent["responses"])
+    intent_data = classify(message)
+    intent = intent_data[0]["intent"]
+    if not float(intent_data[0]["probability"])>=0.9 :
+        return None
+    for _intent in intents:
+        if _intent["tag"]==intent:
+            intent = _intent
+            break
+    return random.choice(intent["responses"])
