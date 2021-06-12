@@ -79,7 +79,7 @@ async def on_raw_reaction_remove(payload:discord.RawReactionActionEvent):
 @client.event
 async def on_message(message:discord.Message):
     await client.process_commands(message)
-    if (message.author != client.user) and ((message.channel.id == BOTCHATCHANNEL) or isinstance(message.channel, discord.channel.DMChannel)) and (not isCommand(message.content)):
+    if (message.author != client.user) and ((message.channel.id == BOTCHATCHANNEL) or isinstance(message.channel, discord.channel.DMChannel)) and (not isCommand(message.content)) and (not isIgnored(message.content)):
         response = predict(message.content)
         if response:
             response, embed = format_info(response, message, client)

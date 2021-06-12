@@ -2,8 +2,11 @@ from discord.ext import commands
 from discord.utils import get
 from discord import Embed
 
+from .bot import BOTCHATCHANNEL
+
+
 class Commands(commands.Cog):
-	def __init__(self, bot):
+	def __init__(self, bot:commands.Bot):
 		self.bot = bot
 		self.bot.remove_command("help")
 	
@@ -29,6 +32,12 @@ class Commands(commands.Cog):
 		message.set_image(url="https://instagram.fixc6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/123509246_175040474221222_3294715054928130681_n.jpg?tp=1&_nc_ht=instagram.fixc6-1.fna.fbcdn.net&_nc_ohc=UatFWX7hQzgAX-v_Wqn&edm=ABfd0MgAAAAA&ccb=7-4&oh=981633458ae03673e3ae29dfb9c1110b&oe=60AAE7E1&_nc_sid=7bff83")
 		await ctx.send(embed=message)
 
-	@commands.command(name="instagram", help="Same as \"code insta\"")
-	async def instagram(self, ctx):
-		await self.insta(ctx)
+	@commands.command(name="git", help="Get The2020CoderBot's source code on GitHub")
+	async def git(self, ctx):
+		await ctx.send("Collaborate on The2020CoderBot on GitHub!\nhttps://github.com/Nalin-2005/The2020CoderBot")
+
+	@commands.command(name="chat", help="Get information about The2020CoderBot's chat features")
+	async def chat(self, ctx):
+		channel_chat = self.bot.get_channel(BOTCHATCHANNEL)
+		message = f"The2020CoderBot runs a Deep Learning model using Tensorflow which helps it to respond to user messages. To chat with me, you can visit the {channel_chat.mention} channel, or message me in my DM. If you wish to type messages which i should ignore, prefix the messages with a '!'. If you wish to improve my intelligence, you can work on my code on GitHub."
+		ctx.send(message)

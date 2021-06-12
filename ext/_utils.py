@@ -72,3 +72,6 @@ def format_info(into:str, _input:discord.Message, bot:discord.Client):
         message.add_field(name=f"/r/{meme['subreddit']}", value=meme["postLink"])
         embed = True
     return message, embed
+
+def isIgnored(text:str):
+    return text.startswith("!")
