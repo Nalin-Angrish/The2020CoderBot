@@ -1,15 +1,14 @@
 # The2020Coder Bot
 The official Descord bot for [the2020coder](https://www.instagram.com/the2020coder)'s Discord server.  
-
-Instagram URL: https://www.instagram.com/the2020coder  
-Discord Server URL: https://discord.gg/DekWAGD3EF  
+- [Instagram URL](https://www.instagram.com/the2020coder)  
+- [Discord Server](https://discord.gg/DekWAGD3EF)  
 
 This bot, made by [Nalin Angrish](https://www.nalinangrish.me) is open-sourced on [GitHub](https://github.com/Nalin-2005/The2020CoderBot).  
 
 ## About
 This bot was made for users in The2020Coder's Discord server for the members to have fun and to share newest highlights about the official Instagram account.   
 
-## File meanings
+## Project Structure
 - `main.py`: The main file that contains the initial configuration of the bot and some basic commands and functions.
 - `train_model.py`: The file to train the Tensorflow model for an AI Chatbot.
 - `passenger_wsgi.py`: The file to integrate the app with Apache using Passenger Phusion.
