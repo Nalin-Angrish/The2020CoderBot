@@ -35,7 +35,7 @@ def isCommand(message:str):
             status = True
     return status
 
-def format_info(into:str, _input:discord.Message, bot:discord.Client):
+def format_info(into: str, _input:discord.Message, bot:discord.Client):
     message = into
     embed = False
     if (r"{nalin}" in message):
@@ -60,6 +60,20 @@ def format_info(into:str, _input:discord.Message, bot:discord.Client):
         elif joke_data['type'] == "single":
             joke = joke_data["joke"] + "\n**"
         message = message.replace(r"{pjoke}", joke)
+    if (r"{dark-joke}" in message):
+        joke_data = scraper.get(JOKES_API+"Dark").json()
+        if joke_data['type'] == "twopart":
+            joke = joke_data["setup"] + "\n**" + joke_data["delivery"] + "**"
+        elif joke_data['type'] == "single":
+            joke = joke_data["joke"] + "\n**"
+        message = message.replace(r"{dark-joke}", joke)
+    if (r"{pun}" in message):
+        joke_data = scraper.get(JOKES_API+"Pun").json()
+        if joke_data['type'] == "twopart":
+            joke = joke_data["setup"] + "\n**" + joke_data["delivery"] + "**"
+        elif joke_data['type'] == "single":
+            joke = joke_data["joke"] + "\n**"
+        message = message.replace(r"{pun}", joke)
     if (r"{meme}" in message):
         nsfw = True
         while(nsfw):

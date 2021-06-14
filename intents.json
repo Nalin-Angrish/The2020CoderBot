@@ -61,6 +61,16 @@
         "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}"]
     },
     {
+        "tag": "dark-joke",
+        "patterns": ["Tell me a dark joke.", "Tell a dark joke"],
+        "responses": ["*Here's one:*\n{dark-joke}", "{dark-joke}", "Enjoy!\n{dark-joke}", "Here's an awesome one:\n{dark-joke}", "A dark joke especially for you:\n{dark-joke}"]
+    },
+    {
+        "tag": "pun",
+        "patterns": ["Tell me a pun.", "Tell a clever pun"],
+        "responses": ["*Here's one:*\n{pun}", "{pun}", "Enjoy!\n{pun}", "Here's an awesome one:\n{pun}", "A punny pun especially for you:\n{pun}"]
+    },
+    {
         "tag": "meme",
         "patterns": ["Show a meme", "send a meme", "tell a good meme", "show a good meme", "send a cool meme", "meme"],
         "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}"]
