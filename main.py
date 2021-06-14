@@ -1,8 +1,11 @@
 #!/usr/bin/python
 from dotenv import load_dotenv
 load_dotenv()
-import os
-os.environ['OPENBLAS_NUM_THREADS'] = '1'
+
+# Define resource limits
+import resource
+_, hard = resource.getrlimit(resource.RLIMIT_NPROC)
+resource.setrlimit(resource.RLIMIT_NPROC, (5, hard))
 
 
 from flask import Flask, request

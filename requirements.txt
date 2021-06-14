@@ -7,3 +7,4 @@ tensorflow
 numpy
 pandas
 requests
+resource
