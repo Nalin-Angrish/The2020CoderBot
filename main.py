@@ -37,9 +37,11 @@ def onPost():
 
 
 def init():
-    loop = asyncio.get_event_loop()
-    loop.create_task(bot.start(TOKEN))
-    Thread(target=loop.run_forever).start()
+	loop = asyncio.get_event_loop()
+	loop.create_task(bot.start(TOKEN))
+	thread = Thread(target=loop.run_forever)
+	thread.setDaemon(True)
+	thread.start()
 
 
 init()
