@@ -11,6 +11,7 @@ TOKEN = os.environ.get("BOT_TOKEN")
 GUILD = "the2020coder"
 GETROLESMESSAGE = 801056866289451008
 BOTCHATCHANNEL = 852110126940815371
+RULESCHANNEL = 799605853044604938
 rolemap = {
     "python": "Python Helper",
     "java": "Java Helper",

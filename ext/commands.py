@@ -1,8 +1,7 @@
 from discord.ext import commands
 from discord.utils import get
-from discord import Embed
 
-from .bot import BOTCHATCHANNEL
+from .bot import BOTCHATCHANNEL, RULESCHANNEL
 
 
 class Commands(commands.Cog):
@@ -12,7 +11,7 @@ class Commands(commands.Cog):
 	
 	@commands.command(name="rules", help="Tell the rules of the server.")
 	async def rules(self, ctx):
-		rules = get(ctx.guild.text_channels,name="rules")
+		rules = self.bot.get_channel(RULESCHANNEL)
 		await ctx.send(f"The rules for the server are mentioned in the {rules.mention} channel. To summarize:\n```Discrimination, Bullying and Harassing is strictly prohibited. Self promotion without the consent of an Administrator is not allowed. Spamming or toxic swearing is considered inappropriate and should be taken care of.```\nLogical extensions of rules may also be enforced.")
 
 	@commands.command(name="help", help="Display this message.")
@@ -28,9 +27,7 @@ class Commands(commands.Cog):
 
 	@commands.command(name="insta", help="Get the link of The2020Coder's Instagram account")
 	async def insta(self, ctx):
-		message = Embed(title="Click to check out The2020Coder on Instagram!",type="link", url="https://www.instagram.com/the2020coder")
-		message.set_image(url="https://instagram.fixc6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/123509246_175040474221222_3294715054928130681_n.jpg?tp=1&_nc_ht=instagram.fixc6-1.fna.fbcdn.net&_nc_ohc=UatFWX7hQzgAX-v_Wqn&edm=ABfd0MgAAAAA&ccb=7-4&oh=981633458ae03673e3ae29dfb9c1110b&oe=60AAE7E1&_nc_sid=7bff83")
-		await ctx.send(embed=message)
+		await ctx.send("Check out some awesome memes by The2020Coder on Instagram!\nhttps://www.instagram.com/the2020coder")
 
 	@commands.command(name="git", help="Get The2020CoderBot's source code on GitHub")
 	async def git(self, ctx):
@@ -40,4 +37,4 @@ class Commands(commands.Cog):
 	async def chat(self, ctx):
 		channel_chat = self.bot.get_channel(BOTCHATCHANNEL)
 		message = f"The2020CoderBot runs a Deep Learning model using Tensorflow which helps it to respond to user messages. To chat with me, you can visit the {channel_chat.mention} channel, or message me in my DM. If you wish to type messages which i should ignore, prefix the messages with a '!'. If you wish to improve my intelligence, you can work on my code on GitHub."
-		ctx.send(message)
+		await ctx.send(message)
