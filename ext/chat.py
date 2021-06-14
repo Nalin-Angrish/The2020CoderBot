@@ -4,7 +4,7 @@ from nltk.stem.lancaster import LancasterStemmer
 
 import numpy as np
 import pandas as pd
-from tensorflow import keras
+import tensorflow as tf
 import string
 import json
 
@@ -29,7 +29,12 @@ for intent in intents:
 words = [stemmer.stem(w.lower()) for w in words if w not in ignore_words]
 words = sorted(list(set(words)))
 classes = sorted(list(set(classes)))
-model = keras.models.load_model("chat-ai.h5")
+
+model = tf.lite.Interpreter("chat-ai.tflite")
+model.allocate_tensors()
+input_details = model.get_input_details()
+output_details = model.get_output_details()
+print(input_details, "\n", output_details)
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
@@ -51,9 +56,13 @@ def classify(message):
     ERROR_THRESHOLD = 0.25
     sentence = message
     
-    input_data = pd.DataFrame([bow(sentence, words)], dtype=float, index=['input'])
-    # predict from data and filter out predictions below a threshold
-    results = model.predict([input_data])[0]
+    input_data = pd.DataFrame([bow(sentence, words)], dtype="float32", index=['input'])
+    # predict from data
+    model.set_tensor(input_details[0]['index'],input_data)
+    model.invoke()
+    output_data = model.get_tensor(output_details[0]['index'])
+    results = np.squeeze(output_data)
+    # filter out predictions below a threshold
     results = [[i,r] for i,r in enumerate(results) if r>ERROR_THRESHOLD]
     
     # sort by strength of probability
