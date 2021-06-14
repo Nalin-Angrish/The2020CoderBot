@@ -1,11 +1,13 @@
 #!/usr/bin/python
+import sys
 from dotenv import load_dotenv
 load_dotenv()
 
 # Define resource limits
-import resource
-_, hard = resource.getrlimit(resource.RLIMIT_NPROC)
-resource.setrlimit(resource.RLIMIT_NPROC, (5, hard))
+if(sys.platform != "win32"):
+	import resource
+	_, hard = resource.getrlimit(resource.RLIMIT_NPROC)
+	resource.setrlimit(resource.RLIMIT_NPROC, (5, hard))
 
 
 from flask import Flask, request
