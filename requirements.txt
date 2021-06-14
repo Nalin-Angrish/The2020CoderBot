@@ -1,4 +1,5 @@
-discord 
+discord.py
+cloudscraper
 python-dotenv
 flask
 nltk
