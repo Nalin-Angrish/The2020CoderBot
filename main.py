@@ -3,11 +3,8 @@ import sys
 from dotenv import load_dotenv
 load_dotenv()
 
-# Define resource limits
-if(sys.platform != "win32"):
-	import resource
-	_, hard = resource.getrlimit(resource.RLIMIT_NPROC)
-	resource.setrlimit(resource.RLIMIT_NPROC, (5, hard))
+import os
+os.environ['OPENBLAS_NUM_THREADS'] = '1'
 
 
 from flask import Flask, request
