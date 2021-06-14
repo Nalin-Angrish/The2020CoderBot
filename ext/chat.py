@@ -52,7 +52,7 @@ def bow(sentence, words):
 	return(np.array(bag))
 
 def classify(message):
-    ERROR_THRESHOLD = 0.25
+    ERROR_THRESHOLD = 0.15
     sentence = message
     
     input_data = pd.DataFrame([bow(sentence, words)], dtype="float32", index=['input'])

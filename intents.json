@@ -53,17 +53,17 @@
     {
         "tag": "joke",
         "patterns": ["Tell me a joke.", "Tell a joke", "make me laugh", "make me smile", "tell a funny joke", "make us laugh"],
-        "responses": ["*Here's one:*\n{joke}", "{joke}", "Enjoy!\n{joke}", "Here's an awesome one:\n{joke}"]
+        "responses": ["*Here's one:*\n{joke}", "{joke}", "Enjoy!\n{joke}", "Here's an awesome one:\n{joke}", "Here's a cool one:\n{joke}", "Hope you like it:\n{joke}", "Here's one for you:\n{joke}"]
     },
     {
         "tag": "pjoke",
         "patterns": ["Tell me a programming joke.", "Tell a programming joke", "Tell a techy joke", "tell a tech joke", "tell a coding joke"],
-        "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}"]
+        "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}", "Here's a cool one:\n{pjoke}", "Hope you like it:\n{pjoke}", "Here's one for you:\n{pjoke}"]
     },
     {
         "tag": "meme",
         "patterns": ["Show a meme", "send a meme", "tell a good meme", "show a good meme", "send a cool meme", "meme"],
-        "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}"]
+        "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}", "Here's a cool one:\n{meme}", "Hope you like it:\n{meme}", "Here's one for you:\n{meme}"]
     },
     {
         "tag": "bot-abilities",
