@@ -65,11 +65,9 @@ def format_info(into:str, _input:discord.Message, bot:discord.Client):
             nsfw = meme_data["nsfw"]
         meme = meme_data
         title = message.replace(r"{meme}", "")
-        message = Embed(
-		    title=title
-		)
+        message = Embed(title=title)
         message.set_image(url=meme["preview"][-1])
-        message.add_field(name=f"/r/{meme['subreddit']}", value=meme["postLink"])
+        message.add_field(name=meme['title'], value=meme["postLink"])
         embed = True
     return message, embed
 

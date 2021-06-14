@@ -34,7 +34,6 @@ model = tf.lite.Interpreter("chat-ai.tflite")
 model.allocate_tensors()
 input_details = model.get_input_details()
 output_details = model.get_output_details()
-print(input_details, "\n", output_details)
 
 def clean_up_sentence(sentence):
     sentence_words = nltk.word_tokenize(sentence)
