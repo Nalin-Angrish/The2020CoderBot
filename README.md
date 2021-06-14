@@ -17,7 +17,9 @@ This bot was made for users in The2020Coder's Discord server for the members to 
 	- `bot.py` The main bot configuration.
 	- `chat.py` The main chatbot AI.
 	- `commands.py`: The conversational commands for helping in the server.
-	- `instagram.py`: The functions for Instagram-related operations.
+	- `instagram.py`: The functions for Instagram-related operations.  
+- `chat-ai.tflite`: The tensorflow lite model to classify user's messages.
+- `intents.json`: The dataset to train the model with.
 
 ## License
 This bot is free to use under the terms of the MIT License.
