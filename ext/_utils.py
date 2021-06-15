@@ -38,6 +38,8 @@ def isCommand(message:str):
 def format_info(into: str, _input:discord.Message, bot:discord.Client):
     message = into
     embed = False
+    if (r"{8ball}" in message):
+        message = ""
     if (r"{nalin}" in message):
         nalin = bot.get_user(NALIN_ID)
         message = message.replace(r"{nalin}", nalin.mention)

@@ -81,6 +81,11 @@
         "responses": ["I am just here to entertain you through some memes and jokes! I also like to answer your questions as it is the only way for me to kill time.", "I can kill your boredom by chatting with you and by sending you some awesome memes.", "I just sit all day like a fool sharing memes anmd answering your questions."]
     },
     {
+        "tag": "8ball",
+        "patterns": ["8ball"],
+        "responses": [ "It is Certain.", "It is decidedly so.", "Without a doubt.", "Yes definitely.", "You may rely on it.", "As I see it, yes.", "Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful." ]
+    },
+    {
         "tag": "parent",
         "patterns": ["who created you", "who made you", "who is your father", "who is your mother", "who is your dad", "who is your mom", "who are your parents"],
         "responses": ["I am made by {nalin} and Python :python:", "I was created by {nalin} and Python :python:", "{nalin} and Python :python: are my parents", "{nalin} and Python :python: made me and i have been brought up by some awesome members of the open source community.", "{nalin} and Python :python: made me and this server is my family.", "I was made by the god of all programmers {nalin} and the world's best-est programming language Python :python::heart:"]
