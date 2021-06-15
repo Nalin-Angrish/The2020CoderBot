@@ -27,7 +27,7 @@
     },
     {
         "tag": "compliment",
-        "patterns": ["You are cool", "you are good", "you are awesome", "you are intelligent", "you're cool", "you're good", "you're awesome", "you're intelligent"],
+        "patterns": ["You are cool", "You are nice", "You are fantastic", "you are good", "you are awesome", "you are intelligent", "you're cool", "you're good", "you're nice", "you're awesome", "you're fantastic", "you're intelligent", "cool", "nice", "good", "awesome", "fantastic"],
         "responses": ["Thanks!", "I loved to hear that!", "Thanks for the compliment!", "Thank you!", "I'll try my best to remain like this :blush:"]
     },
     {
@@ -43,7 +43,7 @@
     {
         "tag": "help",
         "patterns": ["Can you please help me", "please help me", "Can you pls help me", "pls help me", "please help me in my projects", "pls help me in my project", "I need help", "I need your help", "could you help me", "could you please help me"],
-        "responses": ["If you need any coding help, please send a message in {help}.", "I can't help much. Try asking {nalin} or others in {help}.", "I can't help much. Try asking {nalin}.", "I can't help much. Try asking in {help}"]
+        "responses": ["If you need any coding help, please send a message in {help}. Or to know about me, type `code help`", "I can't help much. Try asking {nalin} or others in {help}. Try typing `code help`", "I can't help much. Try asking {nalin} or typing `code help`.", "I can't help much. Try asking in {help} or type `code help`"]
     },
     {
         "tag": "are-you-bot",
@@ -53,16 +53,36 @@
     {
         "tag": "joke",
         "patterns": ["Tell me a joke.", "Tell a joke", "make me laugh", "make me smile", "tell a funny joke", "make us laugh"],
-        "responses": ["*Here's one:*\n{joke}", "{joke}", "Enjoy!\n{joke}", "Here's an awesome one:\n{joke}"]
+        "responses": ["*Here's one:*\n{joke}", "{joke}", "Enjoy!\n{joke}", "Here's an awesome one:\n{joke}", "Here's a cool one:\n{joke}", "Hope you like it:\n{joke}", "Here's one for you:\n{joke}"]
     },
     {
         "tag": "pjoke",
         "patterns": ["Tell me a programming joke.", "Tell a programming joke", "Tell a techy joke", "tell a tech joke", "tell a coding joke"],
-        "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}"]
+        "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}", "Here's a cool one:\n{pjoke}", "Hope you like it:\n{pjoke}", "Here's one for you:\n{pjoke}"]
+    },
+    {
+        "tag": "dark-joke",
+        "patterns": ["Tell me a dark joke.", "Tell a dark joke", "tell us a dark joke", "dark joke", "tell an awesome dark joke"],
+        "responses": ["*Here's one:*\n{dark-joke}", "{dark-joke}", "Enjoy!\n{dark-joke}", "Here's an awesome one:\n{dark-joke}", "A dark joke especially for you:\n{dark-joke}"]
+    },
+    {
+        "tag": "pun",
+        "patterns": ["Tell me a pun.", "Tell a clever pun", "tell an awesome pun"],
+        "responses": ["*Here's one:*\n{pun}", "{pun}", "Enjoy!\n{pun}", "Here's an awesome one:\n{pun}", "A punny pun especially for you:\n{pun}", "A clever one for you:\n{pun}"]
     },
     {
         "tag": "meme",
         "patterns": ["Show a meme", "send a meme", "tell a good meme", "show a good meme", "send a cool meme", "meme"],
-        "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}"]
+        "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}", "Here's a cool one:\n{meme}", "Hope you like it:\n{meme}", "Here's one for you:\n{meme}"]
+    },
+    {
+        "tag": "bot-abilities",
+        "patterns": ["what can you do?", "what do you do?", "what you do?", "what are your features", "tell me your abilities", "tell me your features", "what is your job", "what's your job"],
+        "responses": ["I am just here to entertain you through some memes and jokes! I also like to answer your questions as it is the only way for me to kill time.", "I can kill your boredom by chatting with you and by sending you some awesome memes.", "I just sit all day like a fool sharing memes anmd answering your questions."]
+    },
+    {
+        "tag": "parent",
+        "patterns": ["who created you", "who made you", "who is your father", "who is your mother", "who is your dad", "who is your mom", "who are your parents"],
+        "responses": ["I am made by {nalin} and Python :python:", "I was created by {nalin} and Python :python:", "{nalin} and Python :python: are my parents", "{nalin} and Python :python: made me and i have been brought up by some awesome members of the open source community.", "{nalin} and Python :python: made me and this server is my family.", "I was made by the god of all programmers {nalin} and the world's best-est programming language Python :python::heart:"]
     }
 ]
