@@ -52,7 +52,7 @@ def bow(sentence, words):
 	return(np.array(bag))
 
 def classify(message):
-    ERROR_THRESHOLD = 0.15
+    ERROR_THRESHOLD = 0.05
     sentence = message
     
     input_data = pd.DataFrame([bow(sentence, words)], dtype="float32", index=['input'])
@@ -76,8 +76,11 @@ def classify(message):
 
 def predict(message):
     intent_data = classify(message)
-    intent = intent_data[0]["intent"]
-    if not float(intent_data[0]["probability"])>=0.9 :
+    try:
+        intent = intent_data[0]["intent"]
+    except IndexError:
+        return None
+    if not float(intent_data[0]["probability"])>=0.95 :
         return None
     for _intent in intents:
         if _intent["tag"]==intent:
