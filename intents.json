@@ -52,28 +52,28 @@
     },
     {
         "tag": "joke",
-        "patterns": ["Tell me a joke.", "Tell a joke", "make me laugh", "make me smile", "tell a funny joke", "make us laugh"],
-        "responses": ["*Here's one:*\n{joke}", "{joke}", "Enjoy!\n{joke}", "Here's an awesome one:\n{joke}"]
+        "patterns": ["Tell me a joke.", "Tell a joke", "make me laugh", "make me smile", "tell a funny joke", "make us laugh", "can you tell a joke", "can you tell me a joke", "can you make us laugh"],
+        "responses": ["*Here's one:*\n{joke}", "{joke}", "Enjoy!\n{joke}", "Here's an awesome one:\n{joke}", "Here's a cool one:\n{joke}", "Hope you like it:\n{joke}", "Here's one for you:\n{joke}"]
     },
     {
         "tag": "pjoke",
-        "patterns": ["Tell me a programming joke.", "Tell a programming joke", "Tell a techy joke", "tell a tech joke", "tell a coding joke"],
-        "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}"]
+        "patterns": ["Tell me a programming joke.", "Tell a programming joke", "Tell a techy joke", "tell a tech joke", "tell a coding joke", "can you tell a programming joke", "can you tell a tech joke", "can you tell a coding joke", "can you tell a techy joke"],
+        "responses": ["*Here's one:*\n{pjoke}", "{pjoke}", "Enjoy!\n{pjoke}", "Here's an awesome one:\n{pjoke}", "A techy joke especially for you:\n{pjoke}", "Here's a cool one:\n{pjoke}", "Hope you like it:\n{pjoke}", "Here's one for you:\n{pjoke}"]
     },
     {
         "tag": "dark-joke",
-        "patterns": ["Tell me a dark joke.", "Tell a dark joke"],
-        "responses": ["*Here's one:*\n{dark-joke}", "{dark-joke}", "Enjoy!\n{dark-joke}", "Here's an awesome one:\n{dark-joke}", "A dark joke especially for you:\n{dark-joke}"]
+        "patterns": ["Tell me a dark joke.", "Tell a dark joke", "tell us a dark joke", "dark joke", "tell an awesome dark joke", "can you tell a dark joke", "can you tell us a dark joke", "can you tell a dark joke"],
+        "responses": ["*Here's one:*\n{dark-joke}", "{dark-joke}", "Enjoy!\n{dark-joke}", "Here's an awesome one:\n{dark-joke}", "A dark one especially for you:\n{dark-joke}"]
     },
     {
         "tag": "pun",
-        "patterns": ["Tell me a pun.", "Tell a clever pun"],
-        "responses": ["*Here's one:*\n{pun}", "{pun}", "Enjoy!\n{pun}", "Here's an awesome one:\n{pun}", "A punny pun especially for you:\n{pun}"]
+        "patterns": ["Tell me a pun.", "Tell a clever pun", "tell an awesome pun", "can you tell a pun", "can you tell us a clever pun", "can you tell a clever pun", "can you tell us a clever pun"],
+        "responses": ["*Here's one:*\n{pun}", "{pun}", "Enjoy!\n{pun}", "Here's an awesome one:\n{pun}", "A punny pun especially for you:\n{pun}", "A clever one for you:\n{pun}"]
     },
     {
         "tag": "meme",
-        "patterns": ["Show a meme", "send a meme", "tell a good meme", "show a good meme", "send a cool meme", "meme"],
-        "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}"]
+        "patterns": ["Show a meme", "send a meme", "tell a good meme", "show a good meme", "send a cool meme", "meme", "can you tell us a good meme", "can you tell a meme", "tell us a cool meme", "can you send a cool meme"],
+        "responses": ["Here's one: \n{meme}", "{meme}", "Enjoy!\n{meme}", "Here's an awesome one:\n{meme}", "Here's a cool one:\n{meme}", "Hope you like it:\n{meme}", "Here's one for you:\n{meme}"]
     },
     {
         "tag": "bot-abilities",
@@ -88,6 +88,6 @@
     {
         "tag": "parent",
         "patterns": ["who created you", "who made you", "who is your father", "who is your mother", "who is your dad", "who is your mom", "who are your parents"],
-        "responses": ["I am made by {nalin} and Python :python:", "I was created by {nalin} and Python :python:", "{nalin} and Python :python: are my parents", "{nalin} and Python :python: made me and i have been brought up by some awesome members of the open source community.", "{nalin} and Python :python: made me and this server is my family.", "I was made by the god of all programmers {nalin} and the world's best-est programming language Python :python::heart:"]
+        "responses": ["I am made by {nalin} and Python <:python:800374982390579211>", "I was created by {nalin} and <:python:800374982390579211>", "{nalin} and Python <:python:800374982390579211> are my parents", "{nalin} and <:python:800374982390579211> made me and i have been brought up by some awesome members of the open source community.", "{nalin} and <:python:800374982390579211> made me and this server is my family.", "I was made by the god of all programmers {nalin} and the world's best-est programming language Python :heart:"]
     }
 ]

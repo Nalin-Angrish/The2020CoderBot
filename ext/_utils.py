@@ -1,5 +1,6 @@
 import discord
 from discord import Embed
+import random
 import cloudscraper
 
 NALIN_ID = 747752916177387591
@@ -87,6 +88,9 @@ def format_info(into: str, _input:discord.Message, bot:discord.Client):
         message.set_image(url=meme["preview"][-1])
         message.add_field(name=meme['title'], value=meme["postLink"])
         embed = True
+        if(random.randint(0, 100) > 95): # Set only 5% probability of sending the surprise
+            message = message.replace(r"{meme}", "https://tinyurl.com/2fcpre6")
+            embed = False
     return message, embed
 
 def isIgnored(text:str):
