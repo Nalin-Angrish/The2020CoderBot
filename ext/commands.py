@@ -1,7 +1,6 @@
+import discord
 from discord.ext import commands
-from discord.utils import get
-
-from .bot import BOTCHATCHANNEL, RULESCHANNEL
+from .bot import BOTCHATCHANNEL, RULESCHANNEL, rolemap
 
 
 class Commands(commands.Cog):
@@ -38,3 +37,26 @@ class Commands(commands.Cog):
 		channel_chat = self.bot.get_channel(BOTCHATCHANNEL)
 		message = f"The2020CoderBot runs a Deep Learning model using Tensorflow which helps it to respond to user messages. To chat with me, you can visit the {channel_chat.mention} channel, or message me in my DM. If you wish to type messages which i should ignore, prefix the messages with a '!'. If you wish to improve my intelligence, you can work on my code on GitHub."
 		await ctx.send(message)
+
+	@commands.command(name="stats", help="Get the current Server stats.")
+	async def stats(self, ctx):
+		guild:discord.Guild = ctx.guild
+		members:list[discord.Member] = await guild.fetch_members().flatten()
+		helper_roles = rolemap.values()
+
+		userno = len(members)
+		botno = len([member for member in members if member.bot])
+		helpers = []
+		for member in members:
+			for role in member.roles:
+				if role.name in helper_roles and member not in helpers:
+					helpers.append(member)
+		helperno = len(helpers)
+
+		resp =  f"""\
+Guild `{guild.name}`'s stats:
+  Number of Humans: {userno-botno}
+  Number of Bots: {botno}
+  Number of Helpers: {helperno}\
+"""
+		await ctx.send(resp)
