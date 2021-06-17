@@ -1,5 +1,4 @@
 #!/usr/bin/python
-import sys
 from dotenv import load_dotenv
 load_dotenv()
 
