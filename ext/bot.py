@@ -8,7 +8,7 @@ from ._utils import *
 from .chat import predict
 
 TOKEN = os.environ.get("BOT_TOKEN")
-GUILD = "the2020coder"
+GUILD = "The2020Coder"
 GETROLESMESSAGE = 801056866289451008
 BOTCHATCHANNEL = 852110126940815371
 RULESCHANNEL = 799605853044604938
@@ -34,12 +34,7 @@ client = commands.Bot(command_prefix=allcases("code "), intents=intents)
 
 @client.event
 async def on_ready():
-    myGuild = None
-    for guild in client.guilds:
-        if guild.name == GUILD:
-            myGuild = guild
-
-    print(f'{client.user} is connected to {myGuild.name}')
+    print(f'{client.user} is ready to Rock!')
     await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="The2020Coder's Discord Server"), status=discord.Status.online)
 
 
