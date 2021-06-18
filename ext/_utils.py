@@ -82,13 +82,15 @@ def format_info(into: str, _input:discord.Message, bot:discord.Client):
             nsfw = meme_data["nsfw"]
         meme = meme_data
         title = message.replace(r"{meme}", "")
-        message = Embed(title=title)
-        message.set_image(url=meme["preview"][-1])
-        message.add_field(name=meme['title'], value=meme["postLink"])
-        embed = True
+        emessage = Embed(title=title)
+        emessage.set_image(url=meme["preview"][-1])
+        emessage.add_field(name=meme['title'], value=meme["postLink"])
         if(random.randint(0, 100) > 95): # Set only 5% probability of sending the surprise
             message = message.replace(r"{meme}", "https://tinyurl.com/2fcpre6")
             embed = False
+        else:
+            message = emessage
+            embed = True
     return message, embed
 
 def isIgnored(text:str):
