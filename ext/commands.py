@@ -36,6 +36,10 @@ class Commands(commands.Cog):
 	async def git(self, ctx):
 		await ctx.send("Collaborate on The2020CoderBot on GitHub!\nhttps://github.com/Nalin-2005/The2020CoderBot")
 
+	@commands.command(name="invite", help="Generate an invite link for this server.")
+	async def invite(self, ctx):
+		await ctx.send("You can use this link to invite your friends to this server:\nhttps://discord.gg/DekWAGD3EF")
+
 	@commands.command(name="chat", help="Get information about The2020CoderBot's chat features")
 	async def chat(self, ctx):
 		channel_chat = self.bot.get_channel(BOTCHATCHANNEL)
