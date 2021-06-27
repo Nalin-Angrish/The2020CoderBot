@@ -29,13 +29,13 @@ intents.members = True
 intents.reactions = True
 intents.messages = True
 
-client = commands.Bot(command_prefix=allcases("code "), intents=intents)
+client = commands.Bot(command_prefix=allcases("code ")+allcases("sudo "), intents=intents)
 
 
 @client.event
 async def on_ready():
     print(f'{client.user} is ready to Rock!')
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="The2020Coder's Discord Server"), status=discord.Status.online)
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="code help"), status=discord.Status.online)
 
 
 
@@ -46,9 +46,8 @@ async def on_member_join(member:discord.Member):
     suggestions = get(member.guild.text_channels,name="suggestions")
     roles = get(member.guild.text_channels, name='get-helper-roles')
 
-    await member.send(f"Welcome {member.mention}! Check out the rules from the {rules.mention} channel. If you ever have any suggestions on how we can improve our server, you can freely put your opinions in the {suggestions.mention} channel. There is always a regular flow of memes through the instagram account (@the2020coder) and we also have Dank Memer in our server so there is never a lack of entertainment. You can also take help from or give help to your fellow coders in the server. If you wish to help then you can even sign up for a helper role from the {roles.mention} channel. Just react to the messaqge with an Emoji of your preferred language/tool and you are now a Helper!")
     await welcome.send(f"Welcome {member.mention}! Check out the rules from the {rules.mention} channel. We would love if you also folow our instagram account https://instagram.com/the2020coder.")
-
+    await member.send(f"Welcome {member.mention}! Check out the rules from the {rules.mention} channel. If you ever have any suggestions on how we can improve our server, you can freely put your opinions in the {suggestions.mention} channel. There is always a regular flow of memes through the instagram account (@the2020coder) and we also have Dank Memer in our server so there is never a lack of entertainment. You can also take help from or give help to your fellow coders in the server. If you wish to help then you can even sign up for a helper role from the {roles.mention} channel. Just react to the messaqge with an Emoji of your preferred language/tool and you are now a Helper!")
 
 
 @client.event
