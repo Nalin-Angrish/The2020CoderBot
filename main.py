@@ -11,6 +11,7 @@ import json
 
 from ext.bot import TOKEN, client as bot
 from ext.commands import Commands
+from ext.sudo_commands import SudoCommands
 from ext import instagram
 
 import asyncio
@@ -18,6 +19,7 @@ from threading import Thread
 
 
 app = Flask(__name__)
+bot.add_cog(SudoCommands(bot))
 bot.add_cog(Commands(bot))
 instagram.setup(bot)
 

@@ -1,12 +1,16 @@
 import discord
 from discord.ext import commands
 from .bot import BOTCHATCHANNEL, RULESCHANNEL, rolemap
+from ._utils import allcases
 
 
 class Commands(commands.Cog):
 	def __init__(self, bot:commands.Bot):
 		self.bot = bot
 		self.bot.remove_command("help")
+		self.prefixes = allcases("code ")
+	async def cog_check(self, ctx):
+		return ctx.prefix in self.prefixes
 	
 	@commands.command(name="rules", help="Tell the rules of the server.")
 	async def rules(self, ctx):
@@ -17,10 +21,10 @@ class Commands(commands.Cog):
 	async def help(self, ctx):
 		message = "```Commands: \n"
 		for func in Commands.__dict__:
-			if func.startswith("_"):
+			if func.startswith("_") or func=="cog_check":
 				continue
 			function = Commands.__dict__[func]
-			message += "    code " + function.__dict__["name"] + ": " + function.__dict__["help"] + "\n"
+			message += f"    code {function.__dict__['name']}: {function.__dict__['help']}\n"
 		message += "```"
 		await ctx.send(message)
 
@@ -31,6 +35,10 @@ class Commands(commands.Cog):
 	@commands.command(name="git", help="Get The2020CoderBot's source code on GitHub")
 	async def git(self, ctx):
 		await ctx.send("Collaborate on The2020CoderBot on GitHub!\nhttps://github.com/Nalin-2005/The2020CoderBot")
+
+	@commands.command(name="invite", help="Generate an invite link for this server.")
+	async def invite(self, ctx):
+		await ctx.send("You can use this link to invite your friends to this server:\nhttps://discord.gg/DekWAGD3EF")
 
 	@commands.command(name="chat", help="Get information about The2020CoderBot's chat features")
 	async def chat(self, ctx):
