@@ -1,7 +1,8 @@
 import random
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
-
+nltk.download("punkt")
+nltk.download("wordnet")
 import numpy as np
 import pandas as pd
 import tensorflow as tf
