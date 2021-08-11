@@ -9,10 +9,11 @@ from .chat import predict
 
 TOKEN = os.environ.get("BOT_TOKEN")
 GUILD = "The2020Coder"
-GETROLESMESSAGE = 801056866289451008
+GETHELPERROLESMESSAGE = 801056866289451008
+GETROLESMESSAGE = 874920440655650836
 BOTCHATCHANNEL = 852110126940815371
 RULESCHANNEL = 799605853044604938
-rolemap = {
+helperrolemap = {
     "python": "Python Helper",
     "java": "Java Helper",
     "javascript": "JavaScript Helper",
@@ -20,6 +21,9 @@ rolemap = {
     "css": "CSS Helper",
     "git": "Git Helper",
     "terminal": "Terminal Helper"
+}
+rolemap = {
+    "coding": "Coders"
 }
 
 
@@ -52,6 +56,12 @@ async def on_member_join(member:discord.Member):
 
 @client.event
 async def on_raw_reaction_add(payload:discord.RawReactionActionEvent):
+    if(payload.message_id==GETHELPERROLESMESSAGE):
+        userrole = helperrolemap[payload.emoji.name]
+        member = payload.member
+        role = get(member.guild.roles, name=userrole)
+        await member.add_roles(role)
+        await member.send(f"Hello {member.mention}! You have been given the `{userrole}` Role in the server.")
     if(payload.message_id==GETROLESMESSAGE):
         userrole = rolemap[payload.emoji.name]
         member = payload.member
@@ -63,6 +73,12 @@ async def on_raw_reaction_add(payload:discord.RawReactionActionEvent):
 
 @client.event
 async def on_raw_reaction_remove(payload:discord.RawReactionActionEvent):
+    if(payload.message_id==GETHELPERROLESMESSAGE):
+        userrole = helperrolemap[payload.emoji.name]
+        member = get(client.get_all_members() ,id=payload.user_id)
+        role = get(member.guild.roles, name=userrole)
+        await member.remove_roles(role)
+        await member.send(f"Hello {member.mention}! You have been removed from the `{userrole}` Role in the server.")
     if(payload.message_id==GETROLESMESSAGE):
         userrole = rolemap[payload.emoji.name]
         member = get(client.get_all_members() ,id=payload.user_id)
