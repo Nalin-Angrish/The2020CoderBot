@@ -20,10 +20,30 @@ class SudoCommands(commands.Cog):
 			await ctx.send(f"Cannot use `sudo` because user {ctx.message.author.mention} does not have the required priveledges.")
 			return False
 		return True
+
+	@commands.command(name="mute", help="Mute a User")
+	async def mute(self, ctx, member: Optional[discord.Member] = None):
+		if member is not None:
+			await member.remove_roles(get(ctx.guild.roles, name="Member"))
+			await member.add_roles(get(ctx.guild.roles, name="Muted"))
+			await ctx.send(f"Muted {member.mention}.")
+			await member.send(f"You have been muted by {ctx.author.mention} in {ctx.guild.name}.")
+		else:
+			await ctx.send("Please specify a user to mute.")
+
+	@commands.command(name="unmute", help="Unmute a User")
+	async def unmute(self, ctx, member: Optional[discord.Member] = None):
+		if member is not None:
+			await member.remove_roles(get(ctx.guild.roles, name="Muted"))
+			await member.add_roles(get(ctx.guild.roles, name="Member"))
+			await ctx.send(f"Unmuted {member.mention}.")
+			await member.send(f"Congratulations:partying_face:!! You have been unmuted by {ctx.author.mention} in {ctx.guild.name}.")
+		else:
+			await ctx.send("Please specify a user to unmute.")
 	
 	@commands.command(name="kick", help="Kick a User")
 	async def kick(self, ctx, member: Optional[discord.Member] = None):
-		if(member):
+		if member is not None:
 			await ctx.send(f"Kicking User {member.mention} in 5 seconds...")
 			sleep(5)
 			await ctx.send(f"B-Bye {member.mention}!")
@@ -33,7 +53,7 @@ class SudoCommands(commands.Cog):
 
 	@commands.command(name="ban", help="Ban a User")
 	async def ban(self, ctx, member: Optional[discord.Member] = None):
-		if(member):
+		if member is not None:
 			await ctx.send(f"Are you sure you want to ban {member.mention} and not kick? This might be dangerous. (Y/N)")
 			try:
 				def check(msg):

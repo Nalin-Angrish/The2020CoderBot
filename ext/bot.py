@@ -50,6 +50,11 @@ async def on_member_join(member:discord.Member):
     suggestions = get(member.guild.text_channels,name="suggestions")
     roles = get(member.guild.text_channels, name='get-helper-roles')
 
+    if member.bot:
+        await member.add_roles(get(member.guild.roles, name="Bot"))
+    else:
+        await member.add_roles(get(member.guild.roles, name="Member"))
+
     await welcome.send(f"Welcome {member.mention}! Check out the rules from the {rules.mention} channel. We would love if you also folow our instagram account https://instagram.com/the2020coder.")
     await member.send(f"Welcome {member.mention}! Check out the rules from the {rules.mention} channel. If you ever have any suggestions on how we can improve our server, you can freely put your opinions in the {suggestions.mention} channel. There is always a regular flow of memes through the instagram account (@the2020coder) and we also have Dank Memer in our server so there is never a lack of entertainment. You can also take help from or give help to your fellow coders in the server. If you wish to help then you can even sign up for a helper role from the {roles.mention} channel. Just react to the messaqge with an Emoji of your preferred language/tool and you are now a Helper!")
 
