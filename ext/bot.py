@@ -39,7 +39,7 @@ client = commands.Bot(command_prefix=allcases("code ")+allcases("sudo "), intent
 @client.event
 async def on_ready():
     print(f'{client.user} is ready to Rock!')
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="code help"), status=discord.Status.dnd)
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="code help"), status=discord.Status.online)
 
 
 
