@@ -25,7 +25,7 @@ helperrolemap = {
 rolemap = {
     "coding": "Coders"
 }
-
+channel_contexts = {}
 
 
 intents = discord.Intents.default()
@@ -39,7 +39,7 @@ client = commands.Bot(command_prefix=allcases("code ")+allcases("sudo "), intent
 @client.event
 async def on_ready():
     print(f'{client.user} is ready to Rock!')
-    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="code help"), status=discord.Status.online)
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.playing, name="code help"), status=discord.Status.dnd)
 
 
 
@@ -96,9 +96,10 @@ async def on_raw_reaction_remove(payload:discord.RawReactionActionEvent):
 async def on_message(message:discord.Message):
     await client.process_commands(message)
     if (message.author != client.user) and ((message.channel.id == BOTCHATCHANNEL) or isinstance(message.channel, discord.channel.DMChannel)) and (not isCommand(message.content)) and (not isIgnored(message.content)):
-        response = predict(message.content)
+        response = predict(message.content, channel_contexts.get(message.channel.id, None))
         if response:
-            response, embed = format_info(response, message, client)
+            response, embed, new_context = format_info(response, message, client)
+            channel_contexts[message.channel.id] = new_context
             if(embed):
                 await message.reply(embed=response)
             else:

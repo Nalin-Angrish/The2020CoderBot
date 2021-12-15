@@ -39,6 +39,14 @@ def isCommand(message:str):
 def format_info(into: str, _input:discord.Message, bot:discord.Client):
     message = into
     embed = False
+    context = None
+
+    # Set new context if there is any need
+    if ("[" in message):
+        context = message.split("[")[1].split("]")[0]
+        message = message.split("[")[0]
+
+    # dynamically fill-in data
     if (r"{nalin}" in message):
         nalin = bot.get_user(NALIN_ID)
         message = message.replace(r"{nalin}", nalin.mention)
@@ -91,7 +99,9 @@ def format_info(into: str, _input:discord.Message, bot:discord.Client):
         else:
             message = emessage
             embed = True
-    return message, embed
+
+
+    return message, embed, context
 
 def isIgnored(text:str):
     return text.startswith("!")
