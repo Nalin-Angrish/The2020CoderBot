@@ -1,8 +1,7 @@
-# The2020Coder Bot
-The official Descord bot for [the2020coder](https://www.instagram.com/the2020coder)'s Discord server.  
-- [Instagram URL](https://www.instagram.com/the2020coder)  
-- [Discord Server](https://discord.gg/DekWAGD3EF)  
+# Notice
+The instagram account and the discord server were shut down due to less activity, and hence the bot too. The source of the bot still remains public for anyone looking to set up basic ml chatbot or get some inspiration regarding anything.
 
+# The2020Coder Bot
 This bot, made by [Nalin Angrish](https://www.nalinangrish.me) is open-sourced on [GitHub](https://github.com/Nalin-2005/The2020CoderBot).  
 
 ## About
